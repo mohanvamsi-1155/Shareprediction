@@ -33,18 +33,18 @@ rf.fit(features,labels)
 
 expected = testing_data[:,[4]]
 predicted = rf.predict(testing_data[:,[0,1,2,3]])
-print("the expected",expected)
+#print("the expected",expected)
 
 
 predicted = predicted.reshape((len(predicted),1))
-print("the predicted",predicted)
+#print("the predicted",predicted)
 
-print(accuracy_score(expected,predicted))
+print(rf.score(testing_data[:,[0,1,2,3]],expected))
 plt.plot(expected,'r')
 plt.plot(predicted,'b')
 plt.show()
 
-target =[168.75,171.20,166.95,167.90]
+target =[143.00,144.60,140.80,143.95] #values of open,high,low,latest of BoB
 
 target = np.asarray(target)
 
